@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {"hooks": [{"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/ctx_closeout.py\""}]}
+    ],
+    "SessionStart": [
+      {"matcher": "startup|clear|resume",
+       "hooks": [{"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/read_wip.py\""}]}
+    ]
+  },
+  "statusLine": {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/statusline_ctx.py\""}
+}
